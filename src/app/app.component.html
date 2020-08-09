@@ -1,12 +1,35 @@
-<h2>my id - {{mypeerid}}</h2>
-<h4 *ngIf="msg">msg- {{msg}}</h4>
-<input type="text" placeholder="friend's id" [(ngModel)]="anotherid">
-<br>
-<input type="text" [(ngModel)]="mymsg" placeholder="Message">
-<button (click)="send()">send</button>
-<button (click)="videoconnect()">VideoChat</button>
-
-<video #videoPlayer>
-</video>
+<div class="container-fluid">
+  <div class="container">
+    <div class="row">
+      <h2>my id - {{ mypeerid }}</h2>
+    </div>
+    <div class="row">
+      <h4 [innerHTML]=msg></h4>
+    </div>
+    <div class="row">
+      <input
+        type="text"
+        class="input-group m-1"
+        placeholder="friend's id"
+        [(ngModel)]="anotherid"
+      />
+    </div>
+    <div class="row">
+      <input
+        class="input-group m-1"
+        type="text"
+        [(ngModel)]="mymsg"
+        placeholder="Message"
+      />
+      <button class="btn btn-warning m-1" (click)="send()">send</button>
+      <button class="btn btn-danger m-1" (click)="videoconnect()">
+        VideoChat
+      </button>
+    </div>
+    <div class="row">
+      <video #myvideo></video>
+    </div>
+  </div>
+</div>
 
 <router-outlet></router-outlet>
